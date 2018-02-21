@@ -1,18 +1,16 @@
 from geopy.geocoders import Nominatim
 from geopy.distance import great_circle
 geolocator = Nominatim()
-#place1=raw_input("Enter the first city: ")
+# Function to locate the longitude and latitude of cities
+def placelocator(place):
+    location=geolocator.geocode(place)
+    print(location.address)
+    return(location.latitude,location.longitude)
+#User Input
+user_input_1=raw_input("Enter the first city: ")
+place1=placelocator(user_input_1)
+user_input_2=raw_input("Enter the second city: ")
+place2=placelocator(user_input_2)
 location1=geolocator.geocode("Coimbatore")
-print(location1.address)
-print(location1.latitude, location1.longitude)
-#place2=raw_input("Enter the second city: ")
-location2=geolocator.geocode("Trichy")
-print(location2.address)
-print(location2.latitude, location2.longitude)
-a=(location1.latitude, location1.longitude)
-b=(location2.latitude, location2.longitude)
-print(great_circle(a,b).miles)
-def text():
-    x=1
-    while x==1:
-        print "hello"
+print "The distance between the two cities is "
+print(great_circle(place1,place2).miles)
