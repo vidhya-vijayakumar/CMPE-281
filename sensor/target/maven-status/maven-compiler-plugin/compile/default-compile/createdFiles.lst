@@ -1,0 +1,9 @@
+Station/Stationtable.class
+SensorDB/Application.class
+sensor/project/sensor/SensorApplication.class
+Station/Application.class
+SensorDB/Sensortable.class
+Station/StationRepository.class
+Station/StationController.class
+SensorDB/SensorRepository.class
+SensorDB/SensorController.class
